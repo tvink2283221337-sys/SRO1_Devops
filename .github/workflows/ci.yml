@@ -1,4 +1,4 @@
-name: DevOps SRO1 CI/CD
+Sname: DevOps SRO1 CI/CD
 
 on:
   push:
@@ -13,14 +13,12 @@ jobs:
       - name: Download repository
         uses: actions/checkout@v4
 
-      - name: Build website
+      - name: Build and verify website
         run: |
           mkdir -p dist
           cp -av site/. dist/
           ls -la dist/
-
-      - name: Check build result
-        run: |
           test -f dist/index.html
           test -f dist/style.css
           test -f dist/app.js
+          echo "Build completed successfully"
