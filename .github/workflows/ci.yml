@@ -1,0 +1,25 @@
+name: DevOps SRO1 CI/CD
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download repository
+        uses: actions/checkout@v4
+
+      - name: Build website
+        run: |
+          mkdir -p dist
+          cp -r site/. dist/
+
+      - name: Check build result
+        run: |
+          test -f dist/index.html
+          test -f dist/style.css
+          test -f dist/app.js
