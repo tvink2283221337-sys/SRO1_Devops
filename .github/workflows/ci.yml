@@ -1,4 +1,4 @@
-Sname: DevOps SRO1 CI/CD
+name: DevOps SRO1 CI/CD
 
 on:
   push:
