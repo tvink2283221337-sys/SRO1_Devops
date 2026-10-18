@@ -16,7 +16,8 @@ jobs:
       - name: Build website
         run: |
           mkdir -p dist
-          cp -r site/. dist/
+          cp -av site/. dist/
+          ls -la dist/
 
       - name: Check build result
         run: |
