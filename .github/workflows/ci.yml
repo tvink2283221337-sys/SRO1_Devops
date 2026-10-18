@@ -22,3 +22,12 @@ jobs:
           test -f dist/style.css
           test -f dist/app.js
           echo "Build completed successfully"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Run automated tests
+        run: node tests/test.js
+
